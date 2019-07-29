@@ -30,13 +30,13 @@ y-offset = 19
 ; Center Top Bar ;
 ;----------------;
 
-include-file = ~/.config/polybar/top-bar1 
+include-file = ~/.config/polybar/mainBar
 
-;----------------;
-; Left Top Bar ;
-;----------------;
+;-----------------;
+; Left Bottom Bar ;
+;-----------------;
 
-include-file = ~/.config/polybar/top-bar2 
+include-file = ~/.config/polybar/musicBar
 
 ;=======================================;
 
