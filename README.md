@@ -1,4 +1,4 @@
 ![png of current setup](currentSetup.png)
 
-# dotfiles
+# .dotfiles
 My linux dotfiles 🍜
