@@ -1,0 +1,223 @@
+;================================
+;
+; P O L Y B A R    C O N F I G
+;
+;================================
+
+; Most of it is from hrqmonteiro: https://github.com/hrqmonteiro, thanks!
+
+[colors]
+background      = ${xrdb:color0:#222}
+background-alt  = #333
+foreground     = ${xrdb:color8}
+foreground-alt  = #555
+primary         = #FFF
+secondary       = #B2535B
+alert           = #B2535B
+
+xcolor0   = ${xrdb:color0}
+xcolor1   = ${xrdb:color1}
+xcolor2   = ${xrdb:color2}
+xcolor3   = ${xrdb:color3}
+xcolor4   = ${xrdb:color4}
+xcolor5   = ${xrdb:color5}
+xcolor6   = ${xrdb:color6}
+xcolor7   = ${xrdb:color7}
+xcolor8   = ${xrdb:color8}
+xcolor9   = ${xrdb:color9}
+xcolor10  = ${xrdb:color10}
+xcolor11  = ${xrdb:color11}
+xcolor12  = ${xrdb:color12}
+xcolor13  = ${xrdb:color13}
+xcolor14  = ${xrdb:color14}
+xcolor15  = ${xrdb:color15}
+
+;------------;
+; TOPBAR    ;
+;------------;
+
+[bar/top]
+line-size   = 3
+
+border-size   = 4
+border-color  = #00000000
+
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width    = 14.58980337503154%
+height   = 30
+offset-y = 19
+offset-x = 42.7050983%
+
+border-top-size    = 0
+border-bottom-size = 0
+border-right-size  = 0
+border-left-size   = 0
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = scientifica:style=Regular:size=11:antialias=true;3"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=8;3"
+
+;--------;
+; COLORS ;
+;--------;
+
+background      = ${colors.xcolor0}
+;background-alt  = #555
+foreground      = #FF0000
+primary         = #E1D4AE
+secondary       = #e60053
+alert           = #B2535B
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+radius        = 14
+fixed-center  = true
+padding-left  = 0
+padding-right = 2
+
+module-margin-left  = 1
+module-margin-right = 2
+
+modules-left   = 
+modules-center = pulseaudio weather date
+modules-right  = 
+
+tray-position  = hidden
+tray-padding   = 0
+
+cursor-click   = pointer
+cursor-scroll  = ns-resize
+
+;---------;
+; MODULES ;
+;---------;
+
+[module/spotify]
+type          = custom/script
+interval      = 1 format-prefix = "  "
+format        = <label>
+exec          = python $HOME/.config/polybar/spotify.py
+;format-underline =
+format-foreground = ${colors.primary}
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " CPU "
+format-prefix-foreground = ${colors.primary}
+format-underline =
+label = %percentage:2%%
+label-foreground = ${colors.primary}
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " RAM "
+format-prefix-foreground = ${colors.primary}
+format-underline =
+label = %percentage_used%%
+label-foreground = ${colors.primary}
+
+[module/eth]
+type      = internal/network
+interface = enp2s0
+interval  = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix    = " "
+format-connected-prefix-foreground = ${colors.foreground}
+label-connected = %local_ip%
+
+format-disconnected  =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected  = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type     = internal/date
+interval = 5
+
+;date =
+date-alt = " %Y-%m-%d"
+
+time     = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.primary}
+;format-underline  =
+format-foreground = ${colors.primary}
+
+label = %date% %time%
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume            =   <label-volume> 
+format-volume-foreground = ${colors.primary}
+label-volume             = %percentage%%
+label-volume-foreground  = ${colors.primary}
+
+label-muted            =   muted
+label-muted-foreground = ${colors.secondary}
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <label-volume> <bar-volume>
+label-volume  = VOL
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix     = " "
+format-muted-foreground = ${colors.foreground}
+label-muted             = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient   = false
+bar-volume-indicator  = |
+bar-volume-indicator-font = 2
+bar-volume-fill       = ─
+bar-volume-fill-font  = 2
+bar-volume-empty      = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground}
+
+[global/wm]
+margin-top    = 5
+margin-bottom = 5
+
+[module/weather]
+type          = custom/script
+interval      = 10
+format        = <label>
+format-prefix = " "
+exec          = ~/.config/polybar/weather.py
+
+format-foreground = ${colors.primary}
+format-padding    = 2
+
+; vim:ft=dosini
