@@ -2,7 +2,7 @@
 ; TOP CENTER BAR ;
 ;----------------;
 
-[bar/top1]
+[bar/mainBar]
 
 ; modules-left   = 
 modules-center = pulseaudio weather date

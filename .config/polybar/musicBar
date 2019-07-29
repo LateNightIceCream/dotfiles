@@ -2,7 +2,7 @@
 ; TOP LEFT BAR ;
 ;----------------;
 
-[bar/top2]
+[bar/musicBar]
 
 modules-left   = spotify 
 ; modules-center = pulseaudio weather date
