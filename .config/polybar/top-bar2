@@ -21,7 +21,7 @@ offset-x = 5.572809000084119%
 ; LOCATION ;
 ;----------;
 
-bottom = false
+bottom = true
 
 ;-------;
 ; FONTS ;
