@@ -1,0 +1,53 @@
+;----------------;
+; TOP LEFT BAR ;
+;----------------;
+
+[bar/top2]
+
+modules-left   = spotify 
+; modules-center = pulseaudio weather date
+; modules-right  = 
+
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width    = 14.58980337503154%
+height   = 30
+offset-y = ${position.y-offset}
+offset-x = 5.572809000084119%
+
+;----------;
+; LOCATION ;
+;----------;
+                                                                         27,26         13%
+bottom = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = scientifica:style=Regular:size=11:antialias=true;3"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=8;3"
+
+;--------;
+; COLORS ;
+;--------;
+
+background      = #00000000
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+radius        = 14
+fixed-center  = true
+padding-left  = 0
+padding-right = 0
+
+module-margin-left  = 2
+module-margin-right = 2
+
+tray-padding   = 0
