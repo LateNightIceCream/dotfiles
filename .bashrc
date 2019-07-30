@@ -35,6 +35,7 @@ wal3 () {
 alias multiphi='node ~/Projects/Scripts/js\ scribbles/phi\ multiples/multiphi.js'
 alias colors='~/Projects/Scripts/Color-Scripts/color-scripts/./ghosts'
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias removeOrphans='sudo pacman -Rns $(pacman -Qtdq)'
 
 # terminal startup
 (cat ~/.cache/wal/sequences &)

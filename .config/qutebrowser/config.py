@@ -1,5 +1,14 @@
-c.session.lazy_restore= True; # load a restored tab as soon as it takes focus
+#               _       _                                     
+#              | |     | |                                    
+#    __ _ _   _| |_ ___| |__  _ __ _____      _____  ___ _ __ 
+#   / _` | | | | __/ _ \ '_ \| '__/ _ \ \ /\ / / __|/ _ \ '__|
+#  | (_| | |_| | ||  __/ |_) | | | (_) \ V  V /\__ \  __/ |   
+#   \__, |\__,_|\__\___|_.__/|_|  \___/ \_/\_/ |___/\___|_|   
+#      | |                                                    
+#      |_|                                                    
 
+
+# Read Xresources
 import subprocess
 def read_xresources(prefix):
     props = {}
@@ -22,6 +31,7 @@ c.tabs.background   = True;
 c.content.pdfjs     = True;
 c.tabs.padding      = {"bottom": 3, "left": 5, "right": 5, "top": 3}
 
+c.session.lazy_restore= True; # load a restored tab as soon as it takes focus
 
 # FONTS
 c.fonts.statusbar           = '10pt SFNS Display'
