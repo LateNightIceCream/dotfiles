@@ -80,10 +80,10 @@ label-muted-foreground = ${colors.xcolor1}
 
 [module/weather]
 type          = custom/script
-interval      = 10
+interval      = 600
 format        = <label>
-format-prefix = " "
-exec          = ~/.config/polybar/weather.py
+exec          = ~/.config/polybar/weather.sh
+label-font    = 5
 
 format-foreground = ${colors.foreground}
 format-padding    = 2
