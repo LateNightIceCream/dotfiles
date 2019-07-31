@@ -99,5 +99,7 @@ c.tabs.favicons.show = 'never'
 
 c.completion.web_history.max_items = 7
 
+# KEYBINDINGS
 config.bind("tL", "open https://outline.com/{url}")
 config.bind("ewe", "open -t https://www.youtube.com/watch?v=v8E3oPKvYqY&list=PLfj90-UgpyHDgpVaQNPJGSeKv1fZdiueC&index=62")
+config.bind("ü", "spawn --userscript writewpsource.sh")
