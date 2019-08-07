@@ -23,3 +23,23 @@ https://wallhaven.cc/w/nklg91
 
 Boats at Calm Body of Water by Mountain Slip · Free Stock Photo
 https://www.pexels.com/photo/boats-at-calm-body-of-water-by-mountain-slip-2437293/
+
+
+Nature, outdoors, scenery and landscape | HD photo by Andrik Langfield (@andriklangfield) on Unsplash
+https://unsplash.com/photos/FFSRykKHYc4
+
+
+A drone shot from Oahu / Hawaii. | HD photo by Patrick Langwallner (@patresinger) on Unsplash
+https://unsplash.com/photos/wiFOaBrX_wc
+
+
+/#minimalism, #artwork, #Asia, #fox, #simple background, #animals | 2500x1280 Wallpaper: 2eoekg - wallhaven.cc
+https://wallhaven.cc/w/2eoekg
+
+
+/#Ilya Kuvshinov, #women, #brunette, #shoulder length hair, #looking away, #simple background, #books, #glasses, #round glasses, #sweater, #digital art | 2560x1440 Wallpaper: lmkqqy - wallhaven.cc
+https://wallhaven.cc/w/lmkqqy
+
+
+/#Ilya Kuvshinov, #women, #short hair, #brunette, #umbrella, #outdoors, #railing, #railings, #choker, #jacket | 1920x1080 Wallpaper: 6k2qqw - wallhaven.cc
+https://wallhaven.cc/w/6k2qqw

@@ -13,7 +13,7 @@ PS1='[\u@\h \W]\$ '
 # wallpaper setting
 
 # random wallpaper + colors
-alias wal='wal --backend wal -i ~/Pictures/Wallpapers -o ~/Projects/Scripts/obwal/obwal.sh'
+alias wal='wal --backend wal -i ~/Pictures/Wallpapers -o ~/Projects/Scripts/walscript'
 
 # for trying/using different backends
 wal1 () {

@@ -3,7 +3,7 @@
 #
 
 compton -b  
-wal --backend wal -i ~/Pictures/Wallpapers -o ~/Projects/Scripts/obwal/obwal.sh
+wal --backend wal -i ~/Pictures/Wallpapers -o ~/Projects/Scripts/walscript
 polybar mainBar &
 polybar musicBar &
 dunst &
