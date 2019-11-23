@@ -13,6 +13,7 @@
 #padding.width: 
 padding.height: 23
 border.width: 0
+padding.width: 23
 window.client.padding.width: 40
 window.client.padding.height: 37
 window.handle.width: 0
@@ -50,8 +51,14 @@ window.inactive.client.color: {color0}
 # Menus
 menu.title.bg:                 solid flat
 menu.title.bg.color:           {color1}
-menu.title.bg.color.splitTo:   #7595b9
-menu.title.bg.colorTo:         #4d6982
+menu.title.bg.color.splitTo:   #00FF00
+menu.title.bg.colorTo:         #00FFFF
+menu.title.text.color:         {foreground}
+menu.items.text.color:         #FFFFFF
+menu.items.active.bg:          solid flat
+menu.items.active.text.color:  {color1}
+menu.separator.color:	       #FF00FF
+
 
 # OSD
 osd.border.color:	{color1}
