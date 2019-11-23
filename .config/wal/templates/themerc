@@ -55,3 +55,6 @@ menu.title.bg.colorTo:         #4d6982
 
 # OSD
 osd.border.color:	{color1}
+osd.label.text.color:	{foreground}
+osd.hilight.bg.color:	{color1}
+osd.unhilight.bg.color:	{color0}

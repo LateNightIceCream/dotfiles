@@ -197,18 +197,6 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Up">
-      <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="C-A-Down">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
     <keybind key="S-A-Left">
       <action name="SendToDesktop">
         <to>left</to>
@@ -221,34 +209,22 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="W-F1">
+    <keybind key="W-1">
       <action name="GoToDesktop">
         <to>1</to>
       </action>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-2">
       <action name="GoToDesktop">
         <to>2</to>
       </action>
     </keybind>
-    <keybind key="W-F3">
+    <keybind key="W-3">
       <action name="GoToDesktop">
         <to>3</to>
       </action>
     </keybind>
-    <keybind key="W-F4">
+    <keybind key="W-4">
       <action name="GoToDesktop">
         <to>4</to>
       </action>
@@ -352,6 +328,11 @@
         <command>deepin-screen-recorder</command>
       </action>
     </keybind>
+    <keybind key="W-w">
+      <action name="Execute">
+        <command>wal -i ~/Pictures/Wallpapers/ -o ~/Projects/Scripts/walscript</command>
+      </action>
+    </keybind>
     <!-- resize windows with Alt + Direction -->
     <keybind key="A-Right">
       <action name="GrowToEdgeEast"/>
@@ -386,6 +367,13 @@
         <y>0</y>
       </action>
     </keybind>
+    <keybind key="C-W-c">
+      <action name="MoveResizeTo">
+        <x>center</x>
+        <y>center</y>
+      </action>
+    </keybind>
+
     <keybind key="W-S-q">
       <action name="Close">
       </action>
@@ -751,8 +739,10 @@
     <!-- show the manage desktops section in the client-list-(combined-)menu -->
   </menu>
   <applications>
-    <application class="qutebrowser">
+    <application class="*">
       <decor>no</decor>
+    </application>
+    <application class="qutebrowser">
       <desktop>2</desktop>
     </application>
     <application class="Gnome-terminal">
@@ -761,9 +751,6 @@
         <width>733.375</width>
         <height>453.251</height>
       </size>
-    </application>
-    <application class="Xfce4-terminal">
-      <decor>no</decor>
     </application>
     <!--
   # this is an example with comments through out. use these to make your

@@ -7,3 +7,4 @@ wal --backend wal -i ~/Pictures/Wallpapers -o ~/Projects/Scripts/walscript
 polybar mainBar &
 polybar musicBar &
 dunst &
+emacs --daemon &

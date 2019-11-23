@@ -7,7 +7,7 @@
 #      | |                                                    
 #      |_|                                                    
 
-
+import random
 # Read Xresources
 import subprocess
 def read_xresources(prefix):
@@ -19,6 +19,15 @@ def read_xresources(prefix):
         props[prop] = value
     return props
 xresources = read_xresources('*')
+
+####
+
+eweList = [
+	'https://www.youtube.com/watch?v=X8avbciUP3c&list=PLfj90-UgpyHDgpVaQNPJGSeKv1fZdiueC&index=119&t=0s',
+	'https://www.youtube.com/watch?v=v8E3oPKvYqY&list=PLfj90-UgpyHDgpVaQNPJGSeKv1fZdiueC&index=62'
+]
+
+####
 
 #
 #   SETTINGS
@@ -101,5 +110,6 @@ c.completion.web_history.max_items = 7
 
 # KEYBINDINGS
 config.bind("tL", "open https://outline.com/{url}")
-config.bind("ewe", "open -t https://www.youtube.com/watch?v=v8E3oPKvYqY&list=PLfj90-UgpyHDgpVaQNPJGSeKv1fZdiueC&index=62")
+config.bind("ewe", "open -t %s" % random.choice(eweList))
 config.bind("ü", "spawn --userscript writewpsource.sh")
+config.bind("sm", "open -t https://www.youtube.com/watch?v=jEPX-sqAL_Y")

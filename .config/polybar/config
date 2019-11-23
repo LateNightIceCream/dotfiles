@@ -57,7 +57,6 @@ interval = 5
 
 ;date =
 date-alt = " %d.%m.%Y"
-
 time     = %H:%M
 time-alt = %H:%M:%S
 
