@@ -8,7 +8,6 @@
 
 [colors]
 background      = ${xrdb:color0:#222}
-;foreground      = ${xrdb:color8}
 foreground      = #FFF
 
 xcolor0   = ${xrdb:color0}

@@ -57,7 +57,7 @@ menu.title.text.color:         {foreground}
 menu.items.text.color:         #FFFFFF
 menu.items.active.bg:          solid flat
 menu.items.active.text.color:  {color1}
-menu.separator.color:	       #FF00FF
+menu.separator.color:	       {color3}
 
 
 # OSD

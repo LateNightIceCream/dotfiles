@@ -2,7 +2,7 @@
 # These things are run when an Openbox X Session is started.
 #
 
-compton -b  
+picom &
 wal --backend wal -i ~/Pictures/Wallpapers -o ~/Projects/Scripts/walscript
 polybar mainBar &
 polybar musicBar &

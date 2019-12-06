@@ -15,7 +15,8 @@ modules-center = pulseaudio weather date
 width    = 14.58980337503154%
 height   = 30
 offset-y = ${position.y-offset}
-offset-x = 42.7050983%
+;offset-x = 42.7050983%
+offset-x = 140
 
 ;----------;
 ; LOCATION ;
@@ -27,7 +28,7 @@ bottom = false
 ; FONTS ;
 ;-------;
 
-font-0 = scientifica:style=Regular:size=11:antialias=true;3"
+font-0 = scientifica:style=Regular:size=11:antialias=false;3"
 font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;3"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;3"
 font-3 = "Font Awesome 5 Brands:pixelsize=8;3"
@@ -37,7 +38,8 @@ font-4 = Weather Icons:size=8;1
 ; COLORS ;
 ;--------;
 
-background      = ${colors.xcolor0}
+;background      = ${colors.xcolor0}
+background      = #000000000
 
 ;---------------;
 ; MISCELLANEOUS ;

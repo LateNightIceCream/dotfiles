@@ -27,6 +27,8 @@ eweList = [
 	'https://www.youtube.com/watch?v=v8E3oPKvYqY&list=PLfj90-UgpyHDgpVaQNPJGSeKv1fZdiueC&index=62'
 ]
 
+c.content.user_stylesheets = ["./usercss/user.css"]
+
 ####
 
 #
@@ -34,7 +36,8 @@ eweList = [
 #
 
 # GENERAL
-c.url.searchengines = {"DEFAULT": "https://startpage.com/do/asearch?q={}"}
+#c.url.searchengines = {"DEFAULT": "https://startpage.com/do/asearch?q={}"}
+c.url.searchengines = {"DEFAULT": "https://www.google.com/search?hl=en&q={}"}
 c.auto_save.session = True;
 c.tabs.background   = True;
 c.content.pdfjs     = True;
@@ -101,8 +104,8 @@ c.colors.hints.match.fg         =   xresources['*color3']
 
 
 #   OTHER
-c.colors.tabs.indicator.start   =   xresources['*color2']
-c.colors.tabs.indicator.stop    =   xresources['*color2']
+c.colors.tabs.indicator.start   =   xresources['*background']
+c.colors.tabs.indicator.stop    =   xresources['*background']
 
 c.tabs.favicons.show = 'never'
 

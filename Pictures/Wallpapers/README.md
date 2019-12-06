@@ -93,3 +93,7 @@ https://wallhaven.cc/w/42ldwx
 
 /#nature, #plants, #leaves | 1920x1080 Wallpaper: q6mp87 - wallhaven.cc
 https://wallhaven.cc/w/q6mp87
+
+
+/#aerial view, #hot air balloons, #vehicle, #trees | 2000x1319 Wallpaper: p8523p - wallhaven.cc
+https://wallhaven.cc/w/p8523p
