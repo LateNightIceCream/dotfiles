@@ -378,6 +378,9 @@
       <action name="Close">
       </action>
     </keybind>
+    <keybind key="A-F12">
+    	<action name="ToggleFullscreen" />
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>

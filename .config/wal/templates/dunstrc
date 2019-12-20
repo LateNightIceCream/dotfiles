@@ -34,15 +34,17 @@
 
     frame_width = 0
 
-    frame_color = "#aaaaaa"
+    frame_color = "{foreground}"
 
     # Don't remove messages after this time of inactivity
-    idle_threshold = 120
+    idle_threshold = 40
 
     ### Text ###
 
     # monospace 8
     font = SFNS Display 10
+#    font = Mononoki 10
+#    font = NanumSquare 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -70,7 +72,7 @@
     max_icon_size = 128
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+#    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
     ### History ###
 
@@ -92,8 +94,7 @@
 
 [urgency_low]
     #foreground = "#FFFFFF"
-    #background = "{background}" 
-    background = "{foreground}" 
+    background = "#FFFFFF" 
     foreground = "{color1}"
     timeout = 13
     #icon = /path/to/icon
@@ -101,7 +102,7 @@
 [urgency_normal]
     #foreground = "FFFFFF"
     #background = "{background}" 
-    background = "{foreground}" 
+    background = "#FFFFFF" 
     foreground = "{color1}"
     timeout = 13
 
@@ -112,5 +113,13 @@
     background = "{color1}" 
     frame_color = "#ff0000"
     timeout = 0
+
+[screenshot]
+#    foreground = "{background}"
+    foreground = "{background}"
+    background = "#FFFFFF"
+    icon = deepin-screenshot
+    new_icon = /home/zamza/Pictures/Important/cam4.png
+    format="Screenshot captured!"
 
 # vim: ft=cfg
