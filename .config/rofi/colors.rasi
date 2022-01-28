@@ -1,0 +1,9 @@
+* {
+  fg: #343a40;
+  bg: #f8f9fa;
+  accent: #fcc419;
+  fg-hover: @bg;
+  bg-hover: @fg;
+  fg-unhover: @fg;
+  bg-unhover: #e9ecef;
+}

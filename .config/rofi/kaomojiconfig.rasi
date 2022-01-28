@@ -1,0 +1,11 @@
+configuration {
+    modi: "drun";
+    width: 100;
+    font: "SF Mono 12";
+    fullscreen: true;
+    columns: 5;
+    hide-scrollbar: true;
+    location: 0;
+    padding: 107;
+}
+@theme "colors.rasi"
