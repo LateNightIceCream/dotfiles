@@ -1,0 +1,308 @@
+[colors]
+; Main bar bg color
+background = #00000000
+; Modules bg color
+background-alt = #1E1E28
+background-alt-2 = #bd93f9
+background-alt-3 = #5B5F78
+; main foreground color
+foreground = #D9E0EE
+; accent color
+accent = #96CDFB
+empty = #00000000
+
+mauve = #DDB6F2
+black = #131020
+green = #ABE9B3
+red = #F28FAD
+orange = #F8BD96
+cyan = #89DCEB
+pink = #F5C2E7
+yellow = #FAE3B0
+blue = #96CDFB
+teal = #B5E8E0
+gray = #988BA2
+flamingo = #F2CDCD
+
+[color]
+
+alpha = #00000000
+
+bg     = ${xrdb:background}
+fg     = ${xrdb:foreground}
+fg-alt = ${xrdb:foreground}
+workspace-inactive-fg = #3c3836
+
+shade1 = ${xrdb:foreground}
+shade2 = ${xrdb:color2}
+shade3 = ${xrdb:color7}
+shade4 = ${xrdb:background}
+shade5 = ${xrdb:background}
+shade6 = ${xrdb:background}
+shade7 = ${xrdb:color1}
+shade8 = #ffec99
+
+
+[bar/main]
+modules-left   = i3
+modules-center =
+modules-right  = l1 spotify date
+
+width = 100%
+height = 34
+offset-x = 0%
+offset-y = 0%
+radius = 0.0
+fixed-center = false
+wm-restack = bspwm
+override-redirect = true
+
+line-height = 4
+line-size   = 3
+line-color  = #ffffff
+
+foreground = ${colors.foreground}
+background = ${color.alpha}
+border-color = ${color.alpha}
+border-size = 10
+
+; fonts
+font-0 = "JetBrainsMono NF:style=Bold:size=10;2"
+font-1 = "feather:size=12;2"
+font-2 = "Noto Sans CJK HK:style=Bold:size=8;2"
+
+; font for the rounded thingis
+font-3 = "JetBrainsMono NF:style=Bold:size=21;5"
+; font-3 = DaddyTimeMono Nerd Font:size=21;5
+
+[bar/placeholder]
+; i3 override-redirect stuff
+width = 100%
+height = 47
+background = ${color.alpha}
+wm-restack = i3
+override-redirect = false
+
+modules-center = dummy-transparent
+
+[module/date]
+interval = 5
+type = internal/date
+date =
+date-alt = "%{T2}%{T-} %d / %m / %Y"
+
+time = " %I:%M"
+time-alt =
+
+format-prefix = %{T4}%{T-}
+format-prefix-foreground = ${color.fg}
+format-prefix-background = ${color.bg}
+format-underline = ${colors.empty}
+format-suffix = %{T4}%{T-}
+format-suffix-foreground = ${color.fg}
+
+label = "%date% %time% "
+label-foreground = ${color.bg}
+label-background = ${color.fg}
+
+; [module/date]
+; interval = 5
+; type = internal/date
+; date =
+; date-alt = "%{T2}%{T-} %d / %m/ %Y"
+
+; time = " %I:%M"
+; time-alt =
+
+; format-prefix = %{T4}%{T-}
+; format-prefix-foreground = ${color.fg}
+; format-prefix-background = ${color.bg}
+; format-underline = ${colors.empty}
+; format-suffix = %{T4}%{T-}
+; format-suffix-foreground = ${color.fg}
+
+; label = "%date% %time% "
+; label-foreground = ${color.bg}
+; label-background = ${color.fg}
+
+[module/space]
+type = custom/text
+content = "  "
+content-background = ${color.bg}
+
+[module/gap]
+type = custom/text
+content = "  "
+content-background = ${color.alpha}
+
+[module/title]
+type = internal/xwindow
+; Available tags:
+;   <label> (default)
+format = <label>
+format-background = ${color.bg}
+format-foreground = ${colors.foreground}
+format-padding = 1
+
+label = %title%
+label-maxlen = 20
+
+label-empty = Desktop
+label-empty-foreground = ${colors.foreground}
+
+[module/r1]
+type = custom/text
+content = %{T4}%{T-}
+content-background = ${color.alpha}
+content-foreground = ${color.bg}
+
+[module/r2]
+type = custom/text
+content = %{T4}%{T-}
+content-background = ${color.alpha}
+content-foreground = ${color.fg}
+
+[module/l1]
+type = custom/text
+content = %{T4}%{T-}
+content-background = ${color.alpha}
+content-foreground = ${color.bg}
+
+[module/i3]
+type = internal/i3
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = false
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = true
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
+index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
+
+; Wrap around when reaching the first/last workspace
+; Default: true
+wrapping-scroll = true
+
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+; ws-icon-[0-9]+ = label;icon
+; NOTE: The label needs to match the name of the i3 workspace
+; ws-icon-0 = term;
+; ws-icon-1 = ffox;
+; ws-icon-2 = email;
+; ws-icon-3 = file;
+; ws-icon-4 = music;
+; ws-icon-5 = gimp;
+; ws-icon-6 = edit;
+; ws-icon-7 = torr;
+
+ws-icon-0 = "a";
+ws-icon-1 = "b";
+ws-icon-2 = "c";
+ws-icon-3 = file;
+ws-icon-4 = music;
+ws-icon-5 = gimp;
+ws-icon-6 = edit;
+ws-icon-7 = torr;
+
+
+;ws-icon-default =
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = ${color.bg}
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %name%
+label-focused-foreground = ${color.bg}
+label-focused-background = ${color.fg}
+label-focused-underline = ${color.fg}
+label-focused-overline = ${color.fg}
+label-focused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-unfocused =  %name%
+label-unfocused-foreground = ${color.fg}
+label-unfocused-background = ${color.bg}
+label-unfocused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-visible = %name%
+label-visible-underline = #555555
+label-visible-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %name%
+label-urgent-foreground = ${color.bg}
+label-urgent-background = ${color.shade8}
+label-urgent-padding = 2
+
+[module/dummy-transparent]
+type = custom/text
+content = _
+content-background = ${color.alpha}
+content-foreground = ${color.alpha}
+content-padding = 0
+
+[module/spotify]
+type = custom/script
+tail = true
+; prefix symbol is shown before the text
+; format-prefix = %{T6}%{T-}
+format-prefix = %{T6} %{T-}
+format = <label>
+format-foreground = ${color.fg}
+format-background = ${color.bg}
+format-padding = 2
+exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
