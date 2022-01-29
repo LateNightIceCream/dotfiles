@@ -15,6 +15,7 @@ My personal dotfiles! I stole a lot of it from other people and modified it ^^
 - notifications: **dunst**
 - web browser: **qutebrowser**
 - file browser: **ranger or nautilus**
+- pdf-viewer: **zathura**
 - font: **JetBrainsMono NF**
 - colorscheme: **open-color**
 
