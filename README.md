@@ -6,7 +6,7 @@ My personal dotfiles! I stole a lot of it from other people and modified it ^^
 - OS: **Solus**
 - wm: **i3**
 - bar: **polybar**
-- terminal: **Kitty**
+- terminal: **Kitty** with ohmybash
 - web browser: **qutebrowser**
 - file browser: **ranger or nautilus**
 - font: **JetBrainsMono NF**
