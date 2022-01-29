@@ -20,9 +20,6 @@ My personal dotfiles! I stole a lot of it from other people and modified it ^^
 - font: **JetBrainsMono NF**
 - colorscheme: **open-color**
 
-## special things
-- using picom to put a shadow over all windows except the active one
-
 ## ToDo
 - [ ] clean up stitched config files
 - [ ] upload .Xresources
