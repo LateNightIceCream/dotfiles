@@ -11,6 +11,7 @@ My personal dotfiles! I stole a lot of it from other people and modified it ^^
 - wm: **i3**
 - bar: **polybar**
 - terminal: **Kitty** with ohmybash
+- editor: **doom-emacs**
 - notifications: **dunst**
 - web browser: **qutebrowser**
 - file browser: **ranger or nautilus**
