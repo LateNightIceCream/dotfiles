@@ -22,3 +22,5 @@ My personal dotfiles! I stole a lot of it from other people and modified it ^^
 - [ ] upload .Xresources
   - [ ] find way to generate config files with xresource colors
 - [ ] upload screenshot(s)
+- [ ] fix screenshot widget appearing in screenshot
+- [ ] change accent color
