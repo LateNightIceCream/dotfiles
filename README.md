@@ -16,7 +16,7 @@ My personal dotfiles! I stole a lot of it from other people and modified it ^^
 - web browser: **qutebrowser**
 - file browser: **ranger or nautilus**
 - font: **JetBrainsMono NF**
-- colorscheme: open-color
+- colorscheme: **open-color**
 
 ## ToDo
 - [ ] clean up stitched config files
