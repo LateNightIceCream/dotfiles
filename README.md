@@ -25,3 +25,4 @@ My personal dotfiles! I stole a lot of it from other people and modified it ^^
 - [ ] upload screenshot(s)
 - [ ] fix screenshot widget appearing in screenshot
 - [ ] change accent color
+- [ ] fix terminal color scheme
