@@ -6,18 +6,34 @@ Description: template file + config with vars = target file
 Author:      LateNightIceCream, 2022
 '''
 
-import configparser
 import os
+import argparse
+import configparser
 from sys import argv
 
-CONF_FILE     = 'colors.conf'
 START_MARK    = '{'
 END_MARK      = '}'
 CREATE_BACKUP = True
 
+parser = argparse.ArgumentParser(description='template file + config file = target file')
+
+parser.add_argument('target_file', type=str,
+                    help='target file')
+parser.add_argument('template_file', type=str,
+                    help='template file for the target file')
+parser.add_argument('config_file', type=str,
+                    help='config file containing the variables in the template file')
+parser.add_argument('--nobackup', action='store_true', default=False,
+                    help='backup')
+
+args = parser.parse_args()
+
+# =============================================================================
 
 def warn(str):
     print('Warning: ' + str)
+
+# =============================================================================
 
 def config_all_to_dict(conf_file):
     '''
@@ -43,11 +59,15 @@ def config_all_to_dict(conf_file):
 
     return dict1
 
+# =============================================================================
 
 def create_backup(file):
     if os.system('cp ' + file + ' ' + file + '.backup'):
-        print('Could not create backup. Does the target file exist?')
+        warn('could not create backup. does the target file exist?')
+    else:
+        print('created backup of file ' + file + ' as ' + file + '.backup')
 
+# =============================================================================
 
 def get_target_str_from_template(template_file, conf_dict):
     with open(template_file, 'r') as temp_f:
@@ -62,6 +82,10 @@ def get_target_str_from_template(template_file, conf_dict):
             while(start_mark_index > 0):
 
                 end_mark_index = line.find(END_MARK, start_mark_index + 1)
+
+                if end_mark_index < 0:
+                    break;
+
                 next_start_mark_index = line.find(START_MARK, start_mark_index + 1)
 
                 if next_start_mark_index < 0 or next_start_mark_index > end_mark_index:
@@ -72,7 +96,7 @@ def get_target_str_from_template(template_file, conf_dict):
                     try:
                         line = line[:start_mark_index] + conf_dict[word] + line[end_mark_index + 1:]
                     except:
-                        warn('No definition for \'%s\' found' % word)
+                        warn('definition for \'%s\' not found' % word)
 
                 start_mark_index = line.find(START_MARK, start_mark_index + 1) # has to find new bc line overriden
 
@@ -81,49 +105,37 @@ def get_target_str_from_template(template_file, conf_dict):
 
         return ''.join(lines)
 
+# =============================================================================
 
 def override_target_file(target_file, str):
     with open(target_file, 'w+') as f:
         f.write(str)
 
+# =============================================================================
 
 def print_usage():
-    print('usage: ' + argv[0] + ' target_file template_file [config_file]')
+    print('usage: ' + argv[0] + ' target_file template_file config_file')
 
+# =============================================================================
 
 def main():
 
-    template_file = ''
-    target_file   = ''
-    conf_file     = CONF_FILE
+    target_file   = args.target_file
+    template_file = args.template_file
+    config_file   = args.config_file
 
-    if len(argv) < 3:
-        print_usage()
-        return
-
-    target_file   = argv[1]
-    template_file = argv[2]
-
-    if len(argv) > 3:
-        conf_file = argv[3]
-
-    if CREATE_BACKUP == True:
+    if not args.nobackup:
         create_backup(target_file)
 
-    conf_dict = config_all_to_dict(conf_file)
+    conf_dict = config_all_to_dict(config_file)
 
     filled_in_string = get_target_str_from_template(template_file, conf_dict)
 
-    #override_target_file(target_file, filled_in_string)
+    override_target_file(target_file, filled_in_string)
 
-    #print(filled_in_string)
-    print('created \'' + target_file + '\' from \'' + template_file + '\' with \'' + conf_file + '\'')
+    print('created \'' + target_file + '\' from \'' + template_file + '\' with \'' + config_file + '\'')
 
+# =============================================================================
 
 if __name__ == "__main__":
     main()
-
-# # In Linux/Unix
-# os.system('cp source.txt destination.txt')
-# # In Windows
-# os.system('copy source.txt destination.txt')
