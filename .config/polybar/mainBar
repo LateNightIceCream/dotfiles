@@ -1,0 +1,56 @@
+;----------------;
+; TOP CENTER BAR ;
+;----------------;
+
+[bar/mainBar]
+
+; modules-left   = 
+modules-center = pulseaudio weather date
+; modules-right  = 
+
+;------------;
+; DIMENSIONS ;
+;------------;
+
+width    = 14.58980337503154%
+height   = 30
+offset-y = ${position.y-offset}
+;offset-x = 42.7050983%
+offset-x = 140
+
+;----------;
+; LOCATION ;
+;----------;
+
+bottom = false
+
+;-------;
+; FONTS ;
+;-------;
+
+font-0 = scientifica:style=Regular:size=11:antialias=false;3"
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=8;3"
+font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;3"
+font-3 = "Font Awesome 5 Brands:pixelsize=8;3"
+font-4 = Weather Icons:size=8;1
+
+;--------;
+; COLORS ;
+;--------;
+
+;background      = ${colors.xcolor0}
+background      = #000000000
+
+;---------------;
+; MISCELLANEOUS ;
+;---------------;
+
+radius        = 14
+fixed-center  = true
+padding-left  = 0
+padding-right = 0
+
+module-margin-left  = 2
+module-margin-right = 2
+
+tray-padding   = 0
