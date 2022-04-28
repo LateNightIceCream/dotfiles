@@ -119,7 +119,7 @@ bindsym $mod+Shift+s exec ~/.config/rofi/customScripts/screenshot.sh
 bindsym $mod+Shift+q kill
 
 # start rofi as program launcher
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show drun
 
 # change focus
 bindsym $mod+$left focus left
