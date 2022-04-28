@@ -1,0 +1,15 @@
+i3
+polybar
+mpv
+rofi
+kitty
+qutebrowser
+emacs
+python3
+font-jetbrainsmono-ttf
+ranger
+font-manager
+noto-sans-ttf
+picom
+youtube-dlp
+zathura
