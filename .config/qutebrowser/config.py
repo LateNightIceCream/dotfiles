@@ -12,10 +12,11 @@
 ##   qute://help/settings.html
 
 import json
+import configparser
 
 colors = None
 with open('/home/zamza/.config/qutebrowser/opencolor.json') as f:
-    colors = json.loads(f.read())
+    jcolors = json.loads(f.read())
 
 def getcolor(name):
 
@@ -29,19 +30,32 @@ def getcolor(name):
 
         colname += name[i]
 
-    color = colors[colname][index]
+    color = jcolors[colname][index]
 
     return color
 
-# should probably just use a dictionary
-bg_color     = getcolor('gray-9')
-fg_color     = getcolor('gray-0')
-warn_color   = getcolor('red-3')
+# def read_xresources(prefix):
+#     props = {}
+#     x = subprocess.run(['xrdb', '-query'], stdout=subprocess.PIPE)
+#     lines = x.stdout.decode().split('\n')
+#     for line in filter(lambda l : l.startswith(prefix), lines):
+#         prop, _, value = line.partition(':\t')
+#         props[prop] = value
+#     return props
 
-accent_color = getcolor('yellow-3')
+ccfg = configparser.ConfigParser()
+ccfg.read('/home/zamza/.colorscheme')
+colors = dict(ccfg['colors'])
+
+# # should probably just use a dictionary
+bg_color     = colors['background']
+fg_color     = colors['foreground']
+warn_color   = colors['color9']
+
+accent_color = colors['color12']
 accent_fg = bg_color
 
-accent2_color = getcolor('orange-5')
+accent2_color = colors['color11']
 accent2_fg = bg_color
 
 accent3_color = fg_color
@@ -139,7 +153,7 @@ c.colors.completion.category.fg = bg_color
 
 ## Background color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.bg = getcolor("yellow-4")
+c.colors.completion.item.selected.bg = accent_color
 
 ## Bottom border color of the selected completion item.
 ## Type: QssColor
@@ -187,12 +201,12 @@ c.colors.completion.even.bg = c.colors.completion.odd.bg
 ## Background color of the context menu. If set to null, the Qt default
 ## is used.
 ## Type: QssColor
-c.colors.contextmenu.menu.bg = getcolor('gray-9')
+c.colors.contextmenu.menu.bg = bg_color
 
 ## Foreground color of the context menu. If set to null, the Qt default
 ## is used.
 ## Type: QssColor
-c.colors.contextmenu.menu.fg = getcolor('gray-0')
+c.colors.contextmenu.menu.fg = bg_color
 
 ## Background color of the context menu's selected item. If set to null,
 ## the Qt default is used.
@@ -206,7 +220,7 @@ c.colors.contextmenu.selected.fg = accent_fg
 
 ## Background color for the download bar.
 ## Type: QssColor
-c.colors.downloads.bar.bg = getcolor('gray-9')
+c.colors.downloads.bar.bg = bg_color
 
 ## Background color for downloads with errors.
 ## Type: QtColor
@@ -253,11 +267,11 @@ c.colors.downloads.stop.fg = bg_color
 ## Background color for hints. Note that you can use a `rgba(...)` value
 ## for transparency.
 ## Type: QssColor
-c.colors.hints.bg = getcolor('gray-0')
+c.colors.hints.bg = fg_color
 
 ## Font color for hints.
 ## Type: QssColor
-c.colors.hints.fg = getcolor('gray-9')
+c.colors.hints.fg = bg_color
 
 ## Font color for the matched part of hints.
 ## Type: QtColor
@@ -427,7 +441,7 @@ c.colors.tabs.bar.bg = getcolor("pink-6")
 
 ## Background color of unselected odd tabs.
 ## Type: QtColor
-c.colors.tabs.odd.bg  = getcolor("gray-9")
+c.colors.tabs.odd.bg  = bg_color
 c.colors.tabs.even.bg = c.colors.tabs.odd.bg
 
 ## Color for the tab indicator on errors.
@@ -495,7 +509,7 @@ c.tabs.indicator.width = 0
 ## Background color of selected even tabs.
 ## Type: QtColor
 c.colors.tabs.selected.even.bg = accent_color
-c.colors.tabs.selected.even.fg = getcolor('gray-9')
+c.colors.tabs.selected.even.fg = bg_color
 c.colors.tabs.selected.odd.bg  = c.colors.tabs.selected.even.bg
 c.colors.tabs.selected.odd.fg  = c.colors.tabs.selected.even.fg
 

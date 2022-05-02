@@ -2,7 +2,7 @@
 
 * {
     icon-font: "feather 18";
-    background-color: @bg;
+    background-color: @fg;
 }
 
 window {

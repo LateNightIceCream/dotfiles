@@ -13,3 +13,5 @@ noto-sans-ttf
 picom
 youtube-dlp
 zathura
+rofi-devel
+libqalculate

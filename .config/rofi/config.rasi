@@ -6,6 +6,7 @@
 //    \ \__\\ _\\ \_______\ \__\   \ \__\
 //     \|__|\|__|\|_______|\|__|    \|__|
 
+
 configuration {
   modi: "drun";
   font: "JetBrainsMono NF 12";
@@ -15,13 +16,11 @@ configuration {
 }
 
 @theme "/dev/null"
+@import "colors.rasi"
 
 * {
-  bg:        #212529;
-  fg:        #f8f9fa;
   trans-bg:   #00000000;
-  button:     #ffd43b;
-
+  button:     @accent;
   background-color: @trans-bg;
   text-color:      @fg;
 }
@@ -30,7 +29,7 @@ window {
   transparency:     "false";
   fullscreen:       true;
   width:            40%;
-  padding:          19.1% 731px;
+  padding:          23.6% 731px;
   border-radius:    16px;
 }
 
@@ -47,11 +46,11 @@ entry {
 
 inputbar {
   children:       [ prompt, entry ];
-  background-image:               url("~/Pictures/Wallpapers/.wallpaper_cropped");
-  background-color:               @bg;
+  //background-image:               url("~/Pictures/Wallpapers/.wallpaper_cropped");
+  background-color:               @accent;
   expand:                         false;
   border-radius:                  0px 0 8px 8px;
-  padding:                        197px 32px 32px 32px;
+  padding:                        100px 32px 32px 32px;
 }
 
 listview {

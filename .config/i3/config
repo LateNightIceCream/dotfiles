@@ -180,7 +180,7 @@ bindsym $mod+i exec "bash ~/.local/share/rofi/inkscapeNotes.sh"
 bindsym $mod+u exec "bash ~/.scripts/hideIt.sh --class BRAINDUMP --toggle"
 
 # CALCULATOR
-bindsym $mod+c exec "kitty --class kitty-calc kalker-linux"
+bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/themes/calculator"
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -310,4 +310,4 @@ assign [class="Spotify"] $ws3
 assign [class="Gnome-calendar"] $ws11
 assign [class="Evolution"] $ws11
 
-exec "bash ~/.scripts/braindump.sh"
+#exec "bash ~/.scripts/braindump.sh"
