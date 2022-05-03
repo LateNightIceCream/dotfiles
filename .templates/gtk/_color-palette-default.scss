@@ -1,0 +1,76 @@
+// Default Theme Color Palette
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// Red
+$red-light: #ff8787;
+$red-dark: #ff6b6b;
+
+// Pink
+$pink-light: #f783ac;
+$pink-dark: #f06595;
+
+// Purple
+$purple-light: #e599f7;
+$purple-dark: #cc5de8;
+
+// Blue
+$blue-light: #74c0fc;
+$blue-dark: #339af0;
+
+// Teal
+$teal-light: #63e6be;
+$teal-dark: #20c997;
+
+// Green
+$green-light: #8ce99a;
+$green-dark: #51cf66;
+
+// Yellow
+$yellow-light: #ffe066;
+$yellow-dark: #fcc914;
+
+// Orange
+$orange-light: #ffc078;
+$orange-dark: #ff922b;
+
+// Grey
+$grey-050: #f8f9fa;
+$grey-100: shade(#f8f9fa, 10%);
+$grey-150: shade(#f8f9fa, 15%);
+$grey-200: shade(#f8f9fa, 20%);
+$grey-250: shade(#f8f9fa, 25%);
+$grey-300: shade(#f8f9fa, 30%);
+$grey-350: shade(#f8f9fa, 35%);
+$grey-400: tint(#212529, 35%);
+$grey-450: tint(#212529, 30%);
+$grey-500: tint(#212529, 25%);
+$grey-550: tint(#212529, 20%);
+$grey-600: tint(#212529, 15%);
+$grey-650: tint(#212529, 10%);
+$grey-700: tint(#212529, 5%);
+$grey-750: #212529;
+$grey-800: shade(#212529, 5%);
+$grey-850: shade(#212529, 10%);
+$grey-900: shade(#212529, 15%);
+$grey-950: shade(#212529, 20%);
+
+// White
+$white: #FFFFFF;
+
+// Black
+$black: #ff00ff;
+
+// Button
+$button-close: #ff8787;
+$button-max: #8ce99a;
+$button-min: #fcc914;
+
+// Theme
+$default-light: $blue-light;
+$default-dark: $blue-dark;

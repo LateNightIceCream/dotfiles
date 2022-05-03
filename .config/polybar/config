@@ -24,7 +24,7 @@ shade4 = ${xrdb:background}
 shade5 = ${xrdb:background}
 shade6 = ${xrdb:background}
 shade7 = ${xrdb:color1}
-shade8 = #ffec99
+shade8 = ${xrdb:color2}
 
 
 [bar/main]

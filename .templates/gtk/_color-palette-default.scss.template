@@ -1,0 +1,76 @@
+// Default Theme Color Palette
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+// Red
+$red-light: {red-light};
+$red-dark: {red-dark};
+
+// Pink
+$pink-light: {pink-light};
+$pink-dark: {pink-dark};
+
+// Purple
+$purple-light: {purple-light};
+$purple-dark: {purple-dark};
+
+// Blue
+$blue-light: {blue-light};
+$blue-dark: {blue-dark};
+
+// Teal
+$teal-light: {teal-light};
+$teal-dark: {teal-dark};
+
+// Green
+$green-light: {green-light};
+$green-dark: {green-dark};
+
+// Yellow
+$yellow-light: {yellow-light};
+$yellow-dark: {yellow-dark};
+
+// Orange
+$orange-light: {orange-light};
+$orange-dark: {orange-dark};
+
+// Grey
+$grey-050: {foreground};
+$grey-100: shade({foreground}, 10%);
+$grey-150: shade({foreground}, 15%);
+$grey-200: shade({foreground}, 20%);
+$grey-250: shade({foreground}, 25%);
+$grey-300: shade({foreground}, 30%);
+$grey-350: shade({foreground}, 35%);
+$grey-400: tint({background}, 35%);
+$grey-450: tint({background}, 30%);
+$grey-500: tint({background}, 25%);
+$grey-550: tint({background}, 20%);
+$grey-600: tint({background}, 15%);
+$grey-650: tint({background}, 10%);
+$grey-700: tint({background}, 5%);
+$grey-750: {background};
+$grey-800: shade({background}, 5%);
+$grey-850: shade({background}, 10%);
+$grey-900: shade({background}, 15%);
+$grey-950: shade({background}, 20%);
+
+// White
+$white: {foreground};
+
+// Black
+$black: {background};
+
+// Button
+$button-close: {red-light};
+$button-max: {green-light};
+$button-min: {yellow-dark};
+
+// Theme
+$default-light: $blue-light;
+$default-dark: $blue-dark;
