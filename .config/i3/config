@@ -58,17 +58,19 @@ exec --no-startup-id telegram-desktop
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 exec --no-startup-id ~/Documents/Scripts/hideIt.sh --name "^Telegram$" --direction left --steps 3 --hover
-exec --no-startup-id gnome-calendar
+#exec --no-startup-id gnome-calendar
 exec --no-startup-id evolution
 #exec --no-startup-id firefox
-exec --no-startup-id python ~/welcome.py
-exec --no-startup-id ~/./quote.py
-exec --no-startup-id python ~/water_reminder.py
+exec --no-startup-id python ~/.scripts/on_boot_scripts/welcome.py
+exec --no-startup-id ~/.scripts/on_boot_scripts/quote.py
+exec --no-startup-id python ~/.scripts/on_boot_scripts/water_reminder.py
+exec --no-startup-id python ~/.scripts/on_boot_scripts/todo.py
 #exec --no-startup-id python ~/interval.py
-exec --no-startup-id python ~/update_reminder.py
+exec --no-startup-id python ~/.scripts/on_boot_scripts/update_reminder.py
 #exec --no-startup-id fcitx -d
 exec ibus-daemon -drxR
 
+exec --no-startup-id kitty ~/wohnheimnetzwerk.sh
 
 #
 #   __                       __                      __
@@ -229,6 +231,12 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+b move container to workspace $ws11
 
+gaps inner 10
+gaps outer 0
+
+#workspace $ws1 gaps inner 100
+#workspace $ws1 gaps outer 50
+
 # move container
 bindsym $mod+z move workspace to output left
 
@@ -289,12 +297,10 @@ client.background       $bg
 # \ \____/\ \__\\ \_\ \_\ \____\\ \_\
 #  \/___/  \/__/ \/_/\/_/\/____/ \/_/
 
-gaps inner 10
-gaps outer 0
 
 for_window [class="^.*"] border pixel 5
 for_window [class="Zathura"] border pixel 0
-for_window [class="Telegram"] floating enable border pixel 0
+#for_window [class="Telegram"] floating enable border pixel 0
 for_window [class="Inkscape"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
@@ -307,7 +313,10 @@ for_window [class="kitty-calc"] floating enable, resize set 512px 316px
 
 assign [class="Firefox"] $ws2
 assign [class="Spotify"] $ws3
-assign [class="Gnome-calendar"] $ws11
+#assign [class="Gnome-calendar"] $ws11
 assign [class="Evolution"] $ws11
 
 #exec "bash ~/.scripts/braindump.sh"
+
+# godot
+for_window [title="(DEBUG)"] floating enable

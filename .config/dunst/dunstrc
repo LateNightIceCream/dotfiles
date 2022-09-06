@@ -167,6 +167,11 @@
     new_icon   = /home/zamza/.local/share/dunst/feather/white/heart.svg
     background = "#1c7ed6"
 
+[Todo]
+    summary    = ToDo*
+    new_icon   = /home/zamza/.local/share/dunst/feather/white/check-circle.svg
+    background = "#0ca678"
+
 [Updates]
     summary    = *Updates*
     new_icon   = /home/zamza/.local/share/dunst/feather/white/package.svg

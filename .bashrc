@@ -4,6 +4,8 @@ export OSH=/home/zamza/.oh-my-bash
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
 OSH_THEME="envy-mod"
+OSH_THEME="random"
+OSH_THEME="powerline_custom"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -136,3 +138,5 @@ alias quickplot="Rscript $HOME/.scripts/quickplot.R && zathura $HOME/.scripts/tm
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
+
+alias scons3="/usr/bin/env python3 $(which scons)"

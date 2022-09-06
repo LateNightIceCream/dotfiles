@@ -58,10 +58,7 @@ accent_fg = bg_color
 accent2_color = colors['color11']
 accent2_fg = bg_color
 
-accent3_color = fg_color
-accent3_fg = bg_color
-
-accent3_color = fg_color
+accent3_color = colors['color14']
 accent3_fg = bg_color
 
 config.load_autoconfig(True)
@@ -83,7 +80,7 @@ config.load_autoconfig(True)
 ## session which was last loaded. This behavior can be customized via the
 ## `session.default_name` setting.
 ## Type: Bool
-# c.auto_save.session = False
+c.auto_save.session = False
 
 ## Backend to use to display websites. qutebrowser supports two different
 ## web rendering engines / backends, QtWebEngine and QtWebKit (not
@@ -206,7 +203,7 @@ c.colors.contextmenu.menu.bg = bg_color
 ## Foreground color of the context menu. If set to null, the Qt default
 ## is used.
 ## Type: QssColor
-c.colors.contextmenu.menu.fg = bg_color
+c.colors.contextmenu.menu.fg = fg_color
 
 ## Background color of the context menu's selected item. If set to null,
 ## the Qt default is used.
@@ -556,20 +553,20 @@ c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
 ## `colors.webpage.darkmode.threshold.background` to 205.  - "With
 ## selective inversion of everything": Combines the two variants   above.
 ## Type: Bool
-c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.enabled = False
 
 ## Render all colors as grayscale. This only has an effect when
 ## `colors.webpage.darkmode.algorithm` is set to `lightness-hsl` or
 ## `brightness-rgb`.
 ## Type: Bool
-c.colors.webpage.darkmode.grayscale.all = True
+c.colors.webpage.darkmode.grayscale.all = False
 
 ## Desaturation factor for images in dark mode. If set to 0, images are
 ## left as-is. If set to 1, images are completely grayscale. Values
 ## between 0 and 1 desaturate the colors accordingly.
 ## Type: Float
 ## c.colors.webpage.darkmode.grayscale.images = 0.618
-c.colors.webpage.darkmode.grayscale.images = 1
+c.colors.webpage.darkmode.grayscale.images = 0.2
 
 ## Which images to apply dark mode to. With QtWebEngine 5.15.0, this
 ## setting can cause frequent renderer process crashes due to a
@@ -1593,7 +1590,7 @@ c.hints.border = '0px solid #E3BE23'
 ##   - never: Never show the scrollbar.
 ##   - when-searching: Show the scrollbar when searching for text in the webpage. With the QtWebKit backend, this is equal to `never`.
 ##   - overlay: Show an overlay scrollbar. On macOS, this is unavailable and equal to `when-searching`; with the QtWebKit backend, this is equal to `never`. Enabling/disabling overlay scrollbars requires a restart.
-# c.scrolling.bar = 'overlay'
+c.scrolling.bar = 'never'
 
 ## Enable smooth scrolling for web pages. Note smooth scrolling does not
 ## work with the `:scroll-px` command.
@@ -1968,7 +1965,7 @@ c.hints.border = '0px solid #E3BE23'
 
 ## Page(s) to open at the start.
 ## Type: List of FuzzyUrl, or FuzzyUrl
-# c.url.start_pages = ['https://start.duckduckgo.com']
+c.url.start_pages = ['https://start.duckduckgo.com']
 
 ## URL parameters to strip with `:yank url`.
 ## Type: List of String

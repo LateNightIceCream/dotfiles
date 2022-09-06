@@ -2,7 +2,7 @@
 
 background {background}
 foreground {foreground}
-url_color  #1c7ed6
+url_color  {color5}
 cursor     {foreground}
 selection_foreground  {background}
 selection_background  {foreground}
