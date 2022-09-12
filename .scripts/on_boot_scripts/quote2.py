@@ -1,18 +1,29 @@
 #!/usr/bin/env python3
 
 import os
+import re
 import subprocess
+import feedparser
 from bs4 import BeautifulSoup
 
-quote_website = "https://www.brainyquote.com/quote_of_the_day"
+feed_site = 'http://feeds.pariyatti.org/dwob'
+NewsFeed = feedparser.parse(feed_site)
+entry = NewsFeed.entries[0]
 
-html, err = subprocess.Popen(['wget', '-O', '-', quote_website], stdout=subprocess.PIPE).communicate()
-parsed_html = BeautifulSoup(html, features="lxml")
+soup = BeautifulSoup(entry.description, features="lxml")
 
-quote_div = parsed_html.body.findAll('div', {"class" : "qotd-wrapper-cntr"})[1]
-quote     = quote_div.find('a', {"class" : "oncl_q"}).text
-author    = quote_div.find('a', {"class" : "oncl_a"}).text
+# result should be between two links for this specific website
+first = str(soup.find_all('a')[0])
+second = str(soup.find_all('a')[1])
+string = str(soup)
 
-os.system('notify-send "Quote of the Day:" "<b><i>{q}</i></b>\n— {a}"'.format(q = quote, a = author))
+first_index = string.index(first)
+second_index = string.index(second)
 
-#print('\007') # sound
+temp_result = string[(first_index + len(first)):second_index]
+
+quote = temp_result.replace('<br/>', '')
+quote = "".join([s for s in quote.splitlines(True) if s.strip("\r\n")])
+author = entry.author
+
+os.system('notify-send "Quote of the Day:\n" "<b><i>{q}</i></b>\n"'.format(q = quote, a = author))
