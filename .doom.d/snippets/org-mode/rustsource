@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: rustsource
+# key: rust
+# --
+
+#+BEGIN_SRC rust
+fn main() {
+   $0
+}
+#+END_SRC

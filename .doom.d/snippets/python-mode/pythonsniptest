@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: pythonsniptest
+# key: testsnippet
+# --
+
+def justatest():
+    pass
