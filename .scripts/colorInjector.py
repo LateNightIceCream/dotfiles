@@ -25,6 +25,9 @@ parser.add_argument('config_file', type=str,
                     help='config file containing the variables in the template file')
 parser.add_argument('--nobackup', action='store_true', default=False,
                     help='backup')
+parser.add_argument('--nohex', action='store_true', default=False,
+                    help='do not the hex hash. e.g. FF00FF instead of #FF00FF.')
+
 
 args = parser.parse_args()
 
@@ -128,6 +131,11 @@ def main():
         create_backup(target_file)
 
     conf_dict = config_all_to_dict(config_file)
+
+    if args.nohex:
+        for key in conf_dict:
+            if conf_dict[key].startswith('#'):
+                conf_dict[key] = conf_dict[key][1:]
 
     filled_in_string = get_target_str_from_template(template_file, conf_dict)
 

@@ -112,6 +112,9 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mu
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# requires i3 version >= 4.21
+#tiling_drag modifier
+
 # start a terminal
 bindsym $mod+Return exec kitty
 bindsym $mod+t exec kitty ranger
@@ -123,7 +126,7 @@ bindsym $mod+Shift+s exec ~/.config/rofi/customScripts/screenshot.sh
 bindsym $mod+Shift+q kill
 
 # start rofi as program launcher
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun -theme ~/.config/rofi/config.rasi
 
 # change focus
 bindsym $mod+$left focus left
@@ -300,8 +303,11 @@ client.background       $bg
 #  \/___/  \/__/ \/_/\/_/\/____/ \/_/
 
 
-for_window [class="^.*"] border pixel 5
+For_window [class="^.*"] border pixel 0
+For_window [class="Emacs"] border pixel 5
+for_window [class="Nautilus"] border pixel 0
 for_window [class="Zathura"] border pixel 0
+for_window [class="Spotify"] gaps outer 100
 #for_window [class="Telegram"] floating enable border pixel 0
 for_window [class="Inkscape"] floating enable
 for_window [window_role="pop-up"] floating enable
@@ -309,8 +315,10 @@ for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"] floating enable
 for_window [title="Preferences$"] floating enable
 for_window [class="Gnome-calculator"] floating enable
-for_window [class="BRAINDUMP"] floating enable
-for_window [class="BRAINDUMP"] sticky enable
+#for_window [class="BRAINDUMP"] floating enable
+#for_window [class="BRAINDUMP"] sticky enable
+for_window [class="Eog"] floating enable
+for_window [class="io.github.celluloid_player.Celluloid"] floating enable
 for_window [class="kitty-calc"] floating enable, resize set 512px 316px
 
 assign [class="Firefox"] $ws2

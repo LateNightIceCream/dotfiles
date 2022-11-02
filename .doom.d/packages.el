@@ -58,9 +58,12 @@
 (package! rainbow-mode)
 ;(package! kaolin-themes)
 ;;(package! fira-code-mode)
-(package! graphviz-dot-mode)
+;;(package! graphviz-dot-mode)
 (package! evil-pinyin)
 (package! catppuccin-theme)
 (package! writeroom-mode)
 (package! volatile-highlights)
 (package! smartparens)
+
+(package! nano-emacs
+  :recipe (:host github :repo "rougier/nano-emacs"))

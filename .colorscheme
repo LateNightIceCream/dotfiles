@@ -20,6 +20,8 @@ color12 = #ffd34b
 color13 = #22b8cf
 color14 = #e9ecef
 color15 = #20c997
+accent0 = #20c997
+accent1 = #212529
 
 red-light = #ff8787
 red-dark = #ff6b6b

@@ -31,7 +31,7 @@ shade8 = ${xrdb:color2}
 
 modules-left   = i3
 modules-center =
-modules-right  = l1 spotify date
+modules-right  = l1 spotify productivity-toggle date
 
 width = 100%
 height = 34
@@ -53,7 +53,8 @@ border-size = 10
 
 ; fonts
 font-0 = "JetBrainsMono NF:style=Bold:size=10;2"
-font-1 = "feather:size=12;2"
+;font-1 = "feather:size=12;2"
+font-1 = "lucide:size=12;2"
 font-2 = "Noto Sans CJK HK:style=Bold:size=8;2"
 
 ; font for the rounded thingis
@@ -91,7 +92,7 @@ time-alt =
 
 format-prefix = %{T4}%{T-}
 format-prefix-foreground = ${color.fg}
-format-prefix-background = ${color.bg}
+format-prefix-background = ${color.shade2}
 format-underline = ${color.alpha}
 format-suffix = %{T4}%{T-}
 format-suffix-foreground = ${color.fg}
@@ -224,3 +225,22 @@ content = _
 content-background = ${color.alpha}
 content-foreground = ${color.alpha}
 content-padding = 0
+
+[module/productivity-toggle]
+type = custom/script
+; prefix symbol is shown before the text
+; format-prefix = %{T6}%{T-}
+format = <label>
+label-font = 2
+format-prefix = %{T4}%{T-}
+format-prefix-foreground = ${color.shade2}
+format-prefix-background = ${color.bg}
+format-foreground = ${color.bg}
+format-background = ${color.shade2}
+format-padding = 0
+
+;exec = ~/.scripts/polybarscripttest.sh
+exec = ~/.scripts/productivity_toggle.py
+tail = true
+;click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
+click-left = kill -USR1 %pid%

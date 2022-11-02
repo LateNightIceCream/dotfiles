@@ -1,7 +1,7 @@
 * {
   fg: {foreground};
   bg: {background};
-  accent: {color5};
+  accent: {color2};
   fg-hover: @fg;
   bg-hover: @bg;
   fg-unhover: @bg;

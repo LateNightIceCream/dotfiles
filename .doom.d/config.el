@@ -61,6 +61,60 @@
 (add-hook 'org-mode-hook #'org-superstar-mode)
 (add-hook 'text-mode-hook 'visual-line-mode)
 
+(setq org-roam-capture-templates
+      '(("r" "reference" plain "%?"
+         :if-new
+         (file+head "reference/${title}.org" "#+title: ${title}\n")
+         :immediate-finish t
+         :unnarrowed t)
+        ))
+
+(setq org-roam-capture-templates
+    '(("d" "default" plain (function org-roam--capture-get-point)
+       (file "~/roam/Templates/DefaultTemplate.org")
+       :file-name "%<%Y%m%d%H%M%S>-${slug}"
+       :immediate-finish t
+       :unnarrowed t)
+      ("b" "book notes" plain (function org-roam--capture-get-point)
+       (file "~/roam/Templates/BookNoteTemplate.org")
+       :file-name "%<%Y%m%d%H%M%S>-book-${slug}"
+       :immediate-finish t
+       :unnarrowed t)
+      ("r" "reference" plain (function org-roam--capture-get-point)
+       (file "~/roam/Templates/ReferenceTemplate.org")
+       :file-name "reference/${slug}.org"
+       :immediate-finish t
+       :unnarrowed t)
+      ("t" "topic" plain (function org-roam--capture-get-point)
+       (file "~/roam/Templates/TopicTemplate.org")
+       :file-name "%<%Y%m%d%H%M%S>-topic-${slug}"
+       :immediate-finish t
+       :unnarrowed t)
+      ("i" "individual" plain (function org-roam--capture-get-point)
+       (file "~/roam/Templates/IndividualTemplate.org")
+       :file-name "%<%Y%m%d%H%M%S>-individual-${slug}"
+       :immediate-finish t
+       :unnarrowed t)
+      ("e" "entity" plain (function org-roam--capture-get-point)
+       (file "~/roam/Templates/EntityTemplate.org")
+       :file-name "%<%Y%m%d%H%M%S>-entity-${slug}"
+       :immediate-finish t
+       :unnarrowed t)
+      ("v" "talk" plain (function org-roam--capture-get-point)
+       (file "~/roam/Templates/Talk.org")
+       :file-name "%<%Y%m%d%H%M%S>-talk-${slug}"
+       :immediate-finish t
+       :unnarrowed t)
+      ("a" "article" plain (function org-roam--capture-get-point)
+       (file "~/roam/Templates/ArticleTemplate.org")
+       :file-name "%<%Y%m%d%H%M%S>-article-${slug}"
+       :immediate-finish t
+       :unnarrowed t)
+     )
+)
+
+
+;(require 'nano)
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.

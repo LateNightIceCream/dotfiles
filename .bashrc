@@ -140,3 +140,4 @@ if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integr
 # END_KITTY_SHELL_INTEGRATION
 
 alias scons3="/usr/bin/env python3 $(which scons)"
+export PATH=$PATH:/home/zamza/.spicetify

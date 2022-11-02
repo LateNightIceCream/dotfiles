@@ -1,17 +1,7 @@
-//   ________  ________  ________ ___
-// |\   __  \|\   __  \|\  _____\\  \
-// \ \  \|\  \ \  \|\  \ \  \__/\ \  \
-//  \ \   _  _\ \  \\\  \ \   __\\ \  \
-//   \ \  \\  \\ \  \\\  \ \  \_| \ \  \
-//    \ \__\\ _\\ \_______\ \__\   \ \__\
-//     \|__|\|__|\|_______|\|__|    \|__|
-
-
 configuration {
   modi: "drun";
-  font: "JetBrainsMono NF 12";
   display-drun:       "";
-  drun-display-format:            "{name}";
+  drun-display-format: "{name}";
   sidebar-mode:       false;
 }
 
@@ -19,76 +9,74 @@ configuration {
 @import "colors.rasi"
 
 * {
-  trans-bg:   #00000000;
-  button:     @accent;
-  background-color: @trans-bg;
-  text-color:      @fg;
+
+    bg:           @bg;
+    fg:           @fg;
+    accent-bg:    @accent;
+    accent-fg:    @fg;
+    bg-border:    @bg-unhover;
+
+    spacing:          10;
+
+    background-color: @bg;
 }
 
 window {
-  transparency:     "false";
-  fullscreen:       true;
-  width:            40%;
-  padding:          23.6% 731px;
-  border-radius:    16px;
-}
-
-prompt { enabled: false; }
-
-entry {
-  placeholder:      "";
-  placeholder-color:              @fg;
-  expand:                         true;
-  padding:                        18px;
-  border-radius:      16px;
-  background-color: @bg;
+    width:            40%;
+    padding:          23.6% 731px;
+    /*border-radius:    8px;*/
+    border:           2;
+    padding:          12;
+    background-color: @bg;
+    border-color:     @bg-border;
 }
 
 inputbar {
-  children:       [ prompt, entry ];
-  //background-image:               url("~/Pictures/Wallpapers/.wallpaper_cropped");
-  background-color:               @accent;
-  expand:                         false;
-  border-radius:                  0px 0 8px 8px;
-  padding:                        100px 32px 32px 32px;
+    spacing:    0px;
+    padding:    0px 5px 0px 5px;
+    text-color: @fg;
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+prompt {
+    spacing:    0;
+    text-color: @fg;
+}
+
+textbox-prompt-colon {
+    expand:     false;
+    font: "lucide 16";
+    str:        "";
+    margin:     0px 0.62em 0em 0em ;
+    text-color: @fg;
+}
+
+entry {
+    spacing:    5px;
+    text-color: @fg;
 }
 
 listview {
-  columns:                        1;
-  lines:                          4;
-  cycle:                          false;
-  dynamic:                        true;
-  layout:                         vertical;
-  padding:                        32px 32px 32px 32px;
-}
-
-mainbox {
-  children: [ inputbar, listview ];
-  background-color: @bg;
-  border-radius:    16px;
+    fixed-height: 0;
+    spacing:      0px ;
+    scrollbar:    false;
+    lines:        3;
 }
 
 element {
-  orientation:                    vertical;
-  padding:                        1.5% 0% 1.5% 0%;
-  border-radius:      16px;
-  background-color:   @bg;
+    border:  0;
+    padding: 10px 5px 10px 5px;
+    background-color: @bg;
+    text-color:       @fg;
+}
+
+element.selected {
+    background-color: @accent-bg;
+    text-color:       @accent-fg;
 }
 
 element-text {
-  expand:                         true;
-  vertical-align:                 0.5;
-  margin:                         0.5% 3% 0% 3%;
-  background-color:               @bg;
-  text-color:                     inherit;
+    background-color: inherit;
+    text-color:       inherit;
 }
 
-element selected {
-  background-color:               @button;
-  border-radius:                  16px;
-}
-
-element-text selected {
-  background-color: @button;
-  text-color: @bg;
-}
