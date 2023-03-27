@@ -26,7 +26,7 @@ parser.add_argument('config_file', type=str,
 parser.add_argument('--nobackup', action='store_true', default=False,
                     help='backup')
 parser.add_argument('--nohex', action='store_true', default=False,
-                    help='do not the hex hash. e.g. FF00FF instead of #FF00FF.')
+                    help='do not use the hex hash symbol (#). e.g. FF00FF instead of #FF00FF.')
 
 
 args = parser.parse_args()

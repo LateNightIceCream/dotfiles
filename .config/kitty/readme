@@ -1,0 +1,4 @@
+usage:
+./xres_to_kitty.py < xres_colors.txt >> ~/.config/kitty/kitty.conf
+
+https://gist.github.com/xdrie/aabe3b7507683001baf7762df005890b

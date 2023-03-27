@@ -1,0 +1,10 @@
+set recolor "false"
+set recolor-lightcolor "#212529"
+set recolor-darkcolor "#f8f9fa"
+set recolor-reverse-video "false"
+set recolor-keephue "true"
+set completion-bg "282828"
+set completion-fg "ebdbb2"
+set default-fg "ebdbb2"
+set default-bg "282828"
+set guioptions none
