@@ -1,0 +1,123 @@
+require('packer').startup(function(use)
+
+  function get_setup(name)
+	return string.format('require("/home/zamza/.config/nvim/setup/%s")', name)
+  end
+
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+  -- mason
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+    run = ":MasonUpdate"
+  }
+
+  use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }    
+
+
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'nvim-tree/nvim-web-devicons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.startify'.config)
+    end
+  }
+
+  -- git-gutter
+  use 'airblade/vim-gitgutter'
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    -- config = get_setup("lualine")
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  -- use "EdenEast/nightfox.nvim"
+
+  use {
+    "mcchrish/zenbones.nvim",
+    -- Optionally install Lush. Allows for more configuration or extending the colorscheme
+    -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
+    -- In Vim, compat mode is turned on as Lush only works in Neovim.
+    requires = "rktjmp/lush.nvim"
+  }
+
+  use { 'vigoux/ltex-ls.nvim', requires = 'neovim/nvim-lspconfig' }
+
+
+
+end)
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+
+require("lspconfig").pylyzer.setup{}
+-- require("lspconfig").ltex.setup{}
+
+require('lualine').setup()
+
+vim.wo.relativenumber = true
+vim.o.expandtab = true
+vim.o.autoindent = true
+vim.o.smarttab = true
+vim.o.smartindent = true
+vim.o.softtabstop = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.termguicolors = true
+vim.o.colorscheme = "rosebones"
+
+vim.g.zenbones_solid_line_nr = true
+vim.g.zenbones_darken_comments = 33
+
+vim.cmd [[colorscheme rosebones]]
+
+require("lualine").setup {
+	options = { theme = "rosebones" }, -- or any other flavor
+}
+
+
+require 'ltex-ls'.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  use_spellfile = false,
+  filetypes = { "latex", "tex", "bib", "markdown", "gitcommit", "text" },
+  settings = {
+    ltex = {
+      enabled = { "latex", "tex", "bib", "markdown", },
+      language = "auto",
+      diagnosticSeverity = "information",
+      sentenceCacheSize = 2000,
+      additionalRules = {
+        enablePickyRules = true,
+        motherTongue = "fr",
+      },
+      dictionary = (function()
+        -- For dictionary, search for files in the runtime to have
+        -- and include them as externals the format for them is
+        -- dict/{LANG}.txt
+        --
+        -- Also add dict/default.txt to all of them
+        local files = {}
+        for _, file in ipairs(vim.api.nvim_get_runtime_file("dict/*", true)) do
+          local lang = vim.fn.fnamemodify(file, ":t:r")
+          local fullpath = vim.fs.normalize(file, ":p")
+          files[lang] = { ":" .. fullpath }
+        end
+
+        if files.default then
+          for lang, _ in pairs(files) do
+            if lang ~= "default" then
+              vim.list_extend(files[lang], files.default)
+            end
+          end
+          files.default = nil
+        end
+        return files
+      end)(),
+    },
+  },
+}

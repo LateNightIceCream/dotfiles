@@ -1188,7 +1188,7 @@ c.content.webrtc_ip_handling_policy = 'default-public-interface-only'
 ## font setting, it's replaced with the fonts listed here. If set to an
 ## empty value, a system-specific monospace default is used.
 ## Type: List of Font, or Font
-c.fonts.default_family = ['JetBrainsMono NF']
+## c.fonts.default_family = ['JetBrainsMono NF']
 # # herererererere
 
 ## Default font size to use. Whenever "default_size" is used in a font
@@ -1676,14 +1676,14 @@ c.scrolling.bar = 'never'
 
 ## Padding (in pixels) for the statusbar.
 ## Type: Padding
-# c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 0, 'right': 0}
+c.statusbar.padding = {'top': 1, 'bottom': 1, 'left': 16, 'right': 16}
 
 ## Position of the status bar.
 ## Type: VerticalPosition
 ## Valid values:
 ##   - top
 ##   - bottom
-# c.statusbar.position = 'bottom'
+c.statusbar.position = 'bottom'
 
 ## When to show the statusbar.
 ## Type: String
@@ -1691,7 +1691,7 @@ c.scrolling.bar = 'never'
 ##   - always: Always show the statusbar.
 ##   - never: Always hide the statusbar.
 ##   - in-mode: Show the statusbar when in modes other than normal mode.
-# c.statusbar.show = 'always'
+c.statusbar.show = 'in-mode'
 
 ## List of widgets displayed in the statusbar.
 ## Type: List of String
@@ -1820,7 +1820,7 @@ c.scrolling.bar = 'never'
 
 ## Padding (in pixels) around text for tabs.
 ## Type: Padding
-# c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 5, 'right': 5}
+c.tabs.padding = {'top': 0, 'bottom': 0, 'left': 16, 'right': 16}
 
 ## Force pinned tabs to stay at fixed URL.
 ## Type: Bool
@@ -1887,6 +1887,7 @@ c.scrolling.bar = 'never'
 ## page. * `{audio}`: Indicator for audio/mute status.
 ## Type: FormatString
 # c.tabs.title.format = '{audio}{index}: {current_title}'
+c.tabs.title.format = '{audio}{current_title}'
 
 ## Format to use for the tab title for pinned tabs. The same placeholders
 ## like for `tabs.title.format` are defined.
@@ -1924,7 +1925,7 @@ c.scrolling.bar = 'never'
 ## Page to open if :open -t/-b/-w is used without URL. Use `about:blank`
 ## for a blank page.
 ## Type: FuzzyUrl
-# c.url.default_page = 'https://start.duckduckgo.com/'
+c.url.default_page = '/home/zamza/Projects/startpages/startpage-taidy.html'
 
 ## URL segments where `:navigate increment/decrement` will search for a
 ## number.

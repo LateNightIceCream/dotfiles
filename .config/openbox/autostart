@@ -1,0 +1,4 @@
+picom -c -b &
+feh --bg-fill ~/Pictures/Wallpapers/sat.jpg &
+redshift &
+polybar main &

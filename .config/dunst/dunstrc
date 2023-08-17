@@ -121,19 +121,19 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background = "#1e1e2e"
-    foreground = "#cdd6f4"
+    background = "#1A1825"
+    foreground = "#E1D4D4"
     icon = /home/zamza/.local/share/dunst/feather/white/feather.svg
     timeout = 10
 
 [urgency_normal]
-    background = "#89b4fa"
+    background = "#84a0c6"
     foreground = "#f8f9fa"
     icon = /home/zamza/.local/share/dunst/feather/white/triangle.svg
     timeout = 0
 
 [urgency_critical]
-    background = "#f38ba8"
+    background = "#e27278"
     foreground = "#f8f9fa"
     icon = /home/zamza/.local/share/dunst/feather/white/alert-circle.svg
     timeout = 0
@@ -147,13 +147,13 @@
     icon_size     = 64
     new_icon      = /home/zamza/.local/share/dunst/feather/white/music.svg
     timeout       = 10
-    background    = "#1e1e2e"
-    foreground    = "#cdd6f4"
+    background    = "#1A1825"
+    foreground    = "#E1D4D4"
 
 [Telegram]
     appname       = Telegram-desktop
     new_icon      = /home/zamza/.local/share/dunst/feather/white/message-square.svg
-    background    = "#89b4fa"
+    background    = "#F9CA8E"
     foreground    = "#f8f9fa"
 
 #[Plants]
@@ -165,25 +165,25 @@
 [Water]
     summary    = Water Reminder*
     new_icon   = /home/zamza/.local/share/dunst/feather/white/heart.svg
-    background = "#74c7ec"
+    background = "#91acd1"
 
 #[Todo]
 #    summary    = ToDo*
 #    new_icon   = /home/zamza/.local/share/dunst/feather/white/check-circle.svg
-#    background = "#a6e3a1"
+#    background = "#95c4ce"
 
 [Updates]
     summary    = *Updates*
     new_icon   = /home/zamza/.local/share/dunst/feather/white/package.svg
-    background = "#fab387"
+    background = "#e2a478"
 
 [Welcome]
     summary    = Welcome!
     new_icon   = /home/zamza/.local/share/dunst/feather/white/user.svg
-    background = "#89b4fa"
+    background = "#84a0c6"
 
 [Quote]
     summary    = *Quote of the Day*
     format     = "%s\n%b"
     new_icon   = /home/zamza/.local/share/dunst/feather/white/type.svg
-    background = "#cba6f7"
+    background = "#a093c7"

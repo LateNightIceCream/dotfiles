@@ -1,0 +1,70 @@
+/*@-moz-document domain(youtube.com) {*/
+
+.ytd-consent-bump-lightbox, .ytd-popup-container, iron-overlay-backdrop, #guide{
+    display: none !important;
+}
+
+#related {
+    display: none !important;
+    width: 0px !important;
+}
+
+ytd-topbar-logo-renderer {
+    display: none !important;
+}
+
+/* ytd-app { */
+/*     background: #212529 !important; */
+/*     color: #f8f9fa !important; */
+/* } */
+
+/* .style-scope .ytd-video-primary-info-renderer { */
+/*     color: #f8f9fa !important; */
+/* } */
+
+/* Sign in button */
+/* a.yt-simple-endpoint.ytd-button-renderer { */
+/*     display: none !important; */
+/* } */
+
+ytd-button-renderer.style-suggestive[is-paper-button] tp-yt-paper-button.ytd-button-renderer {
+    display: none !important;
+}
+
+#voice-search-button { */
+    display: none !important;
+}
+#voice-search-button.ytd-masthead .ytd-masthead[is-icon-button], #buttons.ytd-masthead .ytd-masthead[is-icon-button] {
+    display: none !important;
+}
+
+#container.ytd-searchbox {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#search-icon-legacy.ytd-searchbox {
+    border: none !important;
+}
+
+.ytd-comments {
+    display: none !important;
+}
+
+/*Just hide everything! (except search bar)*/
+ytd-two-column-browse-results-renderer {
+    display: none !important;
+}
+
+
+/* Hide recommended channels sidebar and Browse button*/
+.igUkRe  {
+    display: none !important;
+}
+
+/* .bPQpwo { */
+/*     display: none !important; */
+/* } */
+
+/*}*/
+/*END*/

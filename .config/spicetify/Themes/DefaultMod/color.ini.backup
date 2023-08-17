@@ -1,19 +1,19 @@
 [Ocean]
-text               = cdd6f4
-subtext            = cdd6f4
-main               = 1e1e2e
-sidebar            = 1e1e2e
-player             = 1e1e2e
-card               = b4befe
-shadow             = 1e1e2e
-selected-row       = cdd6f4
-button             = b4befe
-button-active      = cdd6f4
+text               = e6e7ef
+subtext            = e6e7ef
+main               = e6e7ef
+sidebar            = e6e7ef
+player             = e6e7ef
+card               = f0a977
+shadow             = e6e7ef
+selected-row       = e6e7ef
+button             = f0a977
+button-active      = e6e7ef
 button-disabled    = 434C5E
-tab-active         = b4befe
-notification       = 1e1e2e
-notification-error = eba0ac
-misc               = 1e1e2e
+tab-active         = f0a977
+notification       = e6e7ef
+notification-error = e98989
+misc               = e6e7ef
 
 # [Ocean]
 # text               = #FFFFFF

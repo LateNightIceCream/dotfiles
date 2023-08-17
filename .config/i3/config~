@@ -55,25 +55,20 @@ exec --no-startup-id ~/.fehbg
 exec --no-startup-id redshift -l 54:12
 exec --no-startup-id emacs --daemon &
 exec --no-startup-id telegram-desktop
-exec --no-startup-id spotify
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-#exec --no-startup-id ~/Documents/Scripts/hideIt.sh --name "^Telegram$" --direction left --steps 3 --hover
+exec --no-startup-id ~/Documents/Scripts/hideIt.sh --name "^Telegram$" --direction left --steps 3 --hover
 exec --no-startup-id gnome-calendar
 exec --no-startup-id evolution
 #exec --no-startup-id firefox
-#
-exec --no-startup-id python ~/.scripts/on_boot_scripts/welcome.py
-exec --no-startup-id sleep 2 && python ~/.scripts/on_boot_scripts/water_reminder.py
-exec --no-startup-id sleep 4 && python ~/.scripts/on_boot_scripts/update_reminder.py
-exec --no-startup-id sleep 10 && python ~/.scripts/on_boot_scripts/todo.py
-exec --no-startup-id sleep 20 && python ~/.scripts/on_boot_scripts/quote2.py
+exec --no-startup-id python ~/welcome.py
+exec --no-startup-id ~/./quote.py
+exec --no-startup-id python ~/water_reminder.py
 #exec --no-startup-id python ~/interval.py
-
+exec --no-startup-id python ~/update_reminder.py
 #exec --no-startup-id fcitx -d
 exec ibus-daemon -drxR
 
-#exec --no-startup-id kitty ~/wohnheimnetzwerk.sh
 
 #
 #   __                       __                      __
@@ -113,9 +108,6 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mu
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# requires i3 version >= 4.21
-#tiling_drag modifier
-
 # start a terminal
 bindsym $mod+Return exec kitty
 bindsym $mod+t exec kitty ranger
@@ -127,7 +119,7 @@ bindsym $mod+Shift+s exec ~/.config/rofi/customScripts/screenshot.sh
 bindsym $mod+Shift+q kill
 
 # start rofi as program launcher
-bindsym $mod+d exec rofi -show drun -theme ~/.config/rofi/config.rasi
+bindsym $mod+d exec rofi -show drun
 
 # change focus
 bindsym $mod+$left focus left
@@ -181,14 +173,14 @@ bindsym $mod+a focus parent
 focus_follows_mouse no
 
 # NOTE TAKING
-bindsym $mod+p exec "/home/zamza/Projects/noteman/target/release/noteman --notes-dir /home/zamza/Documents/HS/Master/lnic-masters-protocols/src --template-dir /home/zamza/Documents/HS/Master/lnic-masters-protocols/template --startup-script /home/zamza/Documents/HS/Master/lnic-masters-protocols/tools/noteman_protocol_startup.sh"
-bindsym $mod+n exec "/home/zamza/Projects/noteman/target/release/noteman --notes-dir /home/zamza/Documents/HS/Master/lnic-masters-modules/src --template-dir /home/zamza/Documents/HS/Master/lnic-masters-modules/template --startup-script /home/zamza/Documents/HS/Master/lnic-masters-modules/tools/mdbook_init.sh"
-bindsym $mod+o exec "/home/zamza/Projects/noteman/target/release/noteman --notes-dir /home/zamza/Documents/Notes/src --template-dir /home/zamza/Documents/Notes/template --startup-script /home/zamza/Documents/Notes/tools/mdbook_init.sh"
+bindsym $mod+n exec "bash ~/.local/share/rofi/newNote.sh"
+bindsym $mod+p exec "bash ~/.local/share/rofi/newProto.sh"
+bindsym $mod+i exec "bash ~/.local/share/rofi/inkscapeNotes.sh"
 
-# bindsym $mod+u exec "bash ~/.scripts/hideIt.sh --class BRAINDUMP --toggle"
+bindsym $mod+u exec "bash ~/.scripts/hideIt.sh --class BRAINDUMP --toggle"
 
 # CALCULATOR
-# bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/themes/calculator"
+bindsym $mod+c exec "rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/themes/calculator"
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -199,22 +191,17 @@ bindsym $mod+minus scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-# Icons defined in polybar config.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-set $ws11 "11"
-set $ws12 "12"
-set $ws13 "13"
-set $ws14 "14"
-set $ws15 "15"
+set $ws1 "1:一"
+set $ws2 "2:二"
+set $ws3 "3:三"
+set $ws4 "4:四"
+set $ws5 "5:五"
+set $ws6 "6:六"
+set $ws7 "7:七"
+set $ws8 "8:八"
+set $ws9 "9:九"
+set $ws10 "10:十"
+set $ws11 "11:日历"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -227,11 +214,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-bindsym $mod+F1 workspace $ws11
-bindsym $mod+F2 workspace $ws12
-bindsym $mod+F3 workspace $ws13
-bindsym $mod+F4 workspace $ws14
-bindsym $mod+F5 workspace $ws15
+bindsym $mod+b workspace $ws11
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -244,17 +227,7 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
-bindsym $mod+Shift+F1 move container to workspace $ws11
-bindsym $mod+Shift+F2 move container to workspace $ws12
-bindsym $mod+Shift+F3 move container to workspace $ws13
-bindsym $mod+Shift+F4 move container to workspace $ws14
-bindsym $mod+Shift+F5 move container to workspace $ws15
-
-gaps inner 10
-gaps outer 0
-
-#workspace $ws1 gaps inner 100
-#workspace $ws1 gaps outer 50
+bindsym $mod+Shift+b move container to workspace $ws11
 
 # move container
 bindsym $mod+z move workspace to output left
@@ -316,48 +289,25 @@ client.background       $bg
 # \ \____/\ \__\\ \_\ \_\ \____\\ \_\
 #  \/___/  \/__/ \/_/\/_/\/____/ \/_/
 
+gaps inner 10
+gaps outer 0
 
-For_window [class="^.*"] border pixel 0
-For_window [class="Emacs"] border pixel 5
-for_window [class="Nautilus"] border pixel 0
+for_window [class="^.*"] border pixel 5
 for_window [class="Zathura"] border pixel 0
-#for_window [class="Spotify"] gaps outer 100
-#for_window [class="Gnome-terminal"] border pixel 100
-#for_window [class="Telegram"] floating enable border pixel 0
+for_window [class="Telegram"] floating enable border pixel 0
 for_window [class="Inkscape"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [title="Preferences$"] floating enable
 for_window [title="Preferences$"] floating enable
 for_window [class="Gnome-calculator"] floating enable
-#for_window [class="BRAINDUMP"] floating enable
-#for_window [class="BRAINDUMP"] sticky enable
-for_window [class="Eog"] floating enable
-for_window [class="io.github.celluloid_player.Celluloid"] floating enable
-#for_window [class="kitty-calc"] floating enable, resize set 512px 316px
+for_window [class="BRAINDUMP"] floating enable
+for_window [class="BRAINDUMP"] sticky enable
+for_window [class="kitty-calc"] floating enable, resize set 512px 316px
 
-assign [class="TelegramDesktop"] $ws1
-assign [class="firefox"] $ws12
-assign [class="MDBOOK-NOTES"] $ws12
-assign [class="Evince"] $ws13
-assign [class="Spotify"] $ws10
+assign [class="Firefox"] $ws2
+assign [class="Spotify"] $ws3
 assign [class="Gnome-calendar"] $ws11
 assign [class="Evolution"] $ws11
 
-#exec "bash ~/.scripts/braindump.sh"
-
-# godot
-for_window [title="(DEBUG)"] floating enable
-for_window [class="matplotlib"] floating enable
-for_window [class="gnome-calculator"] floating enable
-
-# WORKSPACE LAYOUTS
-exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/zamza/.i3/workspace-spotify.json'"
-# exec --no-startup-id "i3-msg 'workspace 12; append_layout /home/zamza/.i3/workspace-12.json'"
-
-for_window [class="Spotify"] move window to workspace $ws10
-for_window [class="firefox"] move window to workspace $ws12
-for_window [class="Godot"] move window to workspace $ws14
-
-workspace $ws13 gaps left 733
-workspace $ws10 gaps outer 100
+exec "bash ~/.scripts/braindump.sh"

@@ -8,37 +8,27 @@ configuration {
 @import "colors.rasi"
 
 * {
+
     bg:           @fore;
     fg:           @back;
     accent-bg:    @accent;
     accent-fg:    @back;
     bg-border:    @bg-unhover;
+
     spacing:          10;
+
     background-color: @bg;
 }
 
 window {
-location:   north west;
-anchor:   north west;
-height:    100%;
-width:            23.6%;
-orientation:   horizontal;
-children:   [mainbox];
-x-offset:   0;
-/*y-offset:   -47px;*/
-padding: 64px 32px;
-}
-
-/*window {
-    location: west;
-    anchor: west;
-    width:            23.6%;
-    /*border-radius:    16px;*/
+    width:            27%;
+    padding:          23.6% 731px;
+    border-radius:    16px;
     /*border:           2;*/
     padding:          12;
     background-color: @bg;
     border-color:     @bg-border;
-}*/
+}
 
 inputbar {
     spacing:    0px;
@@ -66,9 +56,10 @@ entry {
 }
 
 listview {
-    spacing:      0px;
+    fixed-height: 0;
+    spacing:      0px ;
     scrollbar:    false;
-    /*lines:        3;*/
+    lines:        3;
 }
 
 element {

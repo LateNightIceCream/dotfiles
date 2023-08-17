@@ -18,7 +18,7 @@ fg-alt = ${xrdb:foreground}
 workspace-inactive-fg = #3c3836
 
 shade1 = ${xrdb:foreground}
-shade2 = ${xrdb:color2}
+shade2 = ${xrdb:color3}
 shade3 = ${xrdb:color7}
 shade4 = ${xrdb:background}
 shade5 = ${xrdb:background}
@@ -31,7 +31,7 @@ shade8 = ${xrdb:color2}
 
 modules-left   = i3
 modules-center =
-modules-right  = l1 spotify productivity-toggle date
+modules-right  = l1 spotify polypomo productivity-toggle date
 
 width = 100%
 height = 34
@@ -55,10 +55,14 @@ border-size = 10
 font-0 = "JetBrainsMono NF:style=Bold:size=10;2"
 ;font-1 = "feather:size=12;2"
 font-1 = "lucide:size=12;2"
-font-2 = "Noto Sans CJK HK:style=Bold:size=8;2"
+font-2 = "Noto Sans CJK HK:style=Bold:size=9;2"
 
 ; font for the rounded thingis
 font-3 = "JetBrainsMono NF:style=Bold:size=21;5"
+
+font-4 = "lucide:size=11;2"
+
+font-5 = "JetBrainsMono NF:style=Bold:size=18;5"
 
 ; used to reserve space for override-redirect in i3
 [bar/placeholder]
@@ -181,14 +185,20 @@ reverse-scroll = false
 fuzzy-match = true
 
 ; not relevant here
-ws-icon-0 = "a";
-ws-icon-1 = "b";
-ws-icon-2 = "c";
-ws-icon-3 = file;
-ws-icon-4 = music;
-ws-icon-5 = gimp;
-ws-icon-6 = edit;
-ws-icon-7 = torr;
+ws-icon-0 = 1;一
+ws-icon-1 = 2;二
+ws-icon-2 = 3;三
+ws-icon-3 = 4;四
+ws-icon-4 = 5;五
+ws-icon-5 = 6;六
+ws-icon-6 = 7;七
+ws-icon-7 = 8;八
+ws-icon-8 = 9;九
+ws-icon-9 = 10;
+ws-icon-10 = 11;
+ws-icon-11 = 12;
+ws-icon-12 = 13;
+ws-icon-13 = 14;
 
 format = <label-state> <label-mode>
 
@@ -196,23 +206,26 @@ label-mode = %mode%
 label-mode-padding = 2
 label-mode-background = ${color.bg}
 
-label-focused = %name%
+label-focused = %{T5}%icon%%{T-}
 label-focused-foreground = ${color.bg}
 label-focused-background = ${color.fg}
 label-focused-underline = ${color.fg}
 label-focused-overline = ${color.fg}
 label-focused-padding = 2
 
-label-unfocused =  %name%
+
+label-unfocused =  %{T5}%icon%%{T-}
 label-unfocused-foreground = ${color.fg}
 label-unfocused-background = ${color.bg}
 label-unfocused-padding = 2
 
-label-visible = %name%
+
+label-visible = %{T5}%icon%%{T-}
 label-visible-underline = #555555
 label-visible-padding = 2
 
-label-urgent = %name%
+
+label-urgent = %{T5}%icon%%{T-}
 label-urgent-foreground = ${color.bg}
 label-urgent-background = ${color.shade8}
 label-urgent-padding = 2
@@ -234,7 +247,7 @@ format = <label>
 label-font = 2
 format-prefix = %{T4}%{T-}
 format-prefix-foreground = ${color.shade2}
-format-prefix-background = ${color.bg}
+format-prefix-background = ${color.shade8}
 format-foreground = ${color.bg}
 format-background = ${color.shade2}
 format-padding = 0
@@ -244,3 +257,24 @@ exec = ~/.scripts/productivity_toggle.py
 tail = true
 ;click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
 click-left = kill -USR1 %pid%
+
+
+[module/polypomo]
+type = custom/script
+
+exec = ~/.config/polybar/scripts/polypomo/polypomo
+tail = true
+
+
+label = %{T2}%output%%{T-}
+click-left = ~/.config/polybar/scripts/polypomo/polypomo toggle
+click-right = ~/.config/polybar/scripts/polypomo/polypomo end
+click-middle = ~/.config/polybar/scripts/polypomo/polypomo lock
+scroll-up = ~/.config/polybar/scripts/polypomo/polypomo time +60
+scroll-down = ~/.config/polybar/scripts/polypomo/polypomo time -60
+
+format-background = ${color.shade8}
+format-prefix = %{T4}%{T-}
+format-prefix-background = ${color.bg}
+format-prefix-foreground = ${color.shade8}
+label-padding = 1
